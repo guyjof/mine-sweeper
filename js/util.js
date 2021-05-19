@@ -27,19 +27,6 @@ function getCellCoord(strCellCoord) {
     return coord;
 }
 
-// function getAvilablePos() {
-//     var pos = [];
-//     for (var i = 0; i < gBoard.length; i++) {
-//         for (var j = 0; j < gBoard[0].length; j++) {
-//             var cell = gBoard[i][j];
-//             if (cell.isShown) continue;
-//             if (cell.isMine) continue;
-//             pos.push({ i: i, j: j });
-//         }
-//     }
-//     return pos;
-// }
-
 function getRandomIntInclusive(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }

@@ -146,7 +146,20 @@ function hard(btn) {
     placeMines()
 }
 
+// mouse click
+function mouseAction(ev) {
+    console.log(ev);
+    switch (ev.button) {
+        case 0: // right click
 
+            break;
+        case 1:
+            break;
+        case 2: // left click
+            // cellMarked(elCell);
+            break;
+    }
+}
 
 
 
