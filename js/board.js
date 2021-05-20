@@ -3,13 +3,7 @@ function buildMat(size) {
     for (var i = 0; i < size; i++) {
         board[i] = [];
         for (j = 0; j < size; j++) {
-            var cell = {
-                minesAroundCount: 0,
-                isShown: false,
-                isMine: false,
-                isMarked: false
-            }
-            board[i][j] = cell;
+            board[i][j] = '';
         }
     }
     return board;
@@ -17,17 +11,15 @@ function buildMat(size) {
 
 function renderBoard(board, selector) {
     //Render the board as a <table> to the page
-    var strHTML = `<table border="1"><tbody>`;
+    var strHTML = `<table><tbody>`;
     for (var i = 0; i < board.length; i++) {
         strHTML += `<tr>`;
         for (var j = 0; j < board.length; j++) {
-            var cell = EMPTY;
-            if (cell.isMine) {
-                cell = EMPTY;
-            }
-
+            var cell = board[i][j];
             var className = `cell cell-${i}-${j}`;
-            strHTML += `<td class="${className}" onclick="cellClicked(this)"> ${cell} </td>`
+            var isMine = (cell.isMine) ? MINE : cell.minesAroundCount;
+            var isShown = (cell.isShown) ? isMine : EMPTY;
+            strHTML += `<td class="${className}" onclick="cellClicked(this,event)"> ${isShown} </td>`
         }
         strHTML += `</tr>`
     }
@@ -39,8 +31,20 @@ function renderBoard(board, selector) {
 
 function buildBoard() {
     gBoard = buildMat(gLevel.SIZE)
-    // console.table(gBoard);
+    for (var i = 0; i < gBoard.length; i++) {
+        for (var j = 0; j < gBoard[0].length; j++) {
+            var cell = {
+                minesAroundCount: 0,
+                isShown: false,
+                isMine: false,
+                isMarked: false,
+                location: { i: i, j: j }
+            };
+            gBoard[i][j] = cell;
+        }
+    }
     setMinesNegsCount(gBoard)
+    renderBoard(gBoard, '.game-board');
     return gBoard;
 }
 
@@ -62,6 +66,8 @@ function countMineNegs(cellI, cellJ) {
         for (var j = cellJ - 1; j <= cellJ + 1; j++) {
             if (j < 0 || j >= gBoard[0].length) continue;
             if (i === cellI && j === cellJ) continue;
+            if (gBoard[i][j].isMarked) continue;
+            if (gBoard[i][j].isShown) continue;
             if (gBoard[i][j].isMine) negsCount++
         }
     }

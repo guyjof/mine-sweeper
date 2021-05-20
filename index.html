@@ -7,16 +7,23 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Mine Sweeper</title>
 </head>
-<body onload="initGame()" onmousedown="mouseAction(event)">
+<body onload="initGame()" onmousedown="mouseAction(event)" >
 
     <main>
-        <button onclick="easy(this)">Easy</button>
-        <button onclick="medium(this)">Medium</button>
-        <button onclick="hard(this)">Hard</button>
+        <div class="controls">
 
-
-        <div class="game-board">
+            <button onclick="easy(this)">Easy</button>
+            <button onclick="medium(this)">Medium</button>
+            <button onclick="hard(this)">Hard</button>
+            
+            <div class="stopwatch">0</div>
+            <button class="smile" onclick="initGame()"></button>
         </div>
+
+        <div class="game-board" oncontextmenu=" return false">
+        </div>
+        
+        <div class="lives"></div>
 
     </main>    
 

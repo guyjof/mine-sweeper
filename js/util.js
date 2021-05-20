@@ -1,4 +1,3 @@
-
 function printMat(mat, selector) {
     var strHTML = '<table border="0"><tbody>';
     for (var i = 0; i < mat.length; i++) {
@@ -30,3 +29,5 @@ function getCellCoord(strCellCoord) {
 function getRandomIntInclusive(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
+

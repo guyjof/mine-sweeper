@@ -1,7 +1,12 @@
 body {
   margin: 0;
   padding: 0;
-  /* background-image: url("img/wallpaper.jpg"); */
+  background-image: url("https://wallpaper.dog/large/10843243.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 900px;
+  text-align: center;
 }
 
 button {
@@ -11,11 +16,13 @@ button {
 
 table {
   margin: auto;
+  border-collapse: collapse;
 }
 
 .cell {
   background-color: lightgray;
   border: 1px solid gray;
+
   padding: 1em;
   cursor: pointer;
   text-align: center;
@@ -23,9 +30,24 @@ table {
   height: 40px;
 }
 
+.cell-pressed {
+  background-color: rgb(165, 165, 165);
+}
+
+.lives img {
+  width: 40px;
+  margin-top: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 footer {
   position: absolute;
-  text-align: center;
-  bottom: 0;
+  font-size: 30px;
+  bottom: 5%;
   left: 40%;
+}
+
+.controls {
+  text-align: center;
 }
