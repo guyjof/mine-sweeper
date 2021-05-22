@@ -85,7 +85,8 @@ footer {
 .test {
   display: flex;
   flex-direction: row;
-  margin: 0px 377px;
+  margin: auto;
+  width: 577px;
   background-color: rgb(200, 200, 200);
   border: inset 10px;
   border-color: rgb(200, 200, 200);
