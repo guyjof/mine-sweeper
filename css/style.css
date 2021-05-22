@@ -14,16 +14,40 @@ button {
   margin: 20px 0;
 }
 
+.level-button {
+  font-size: 0.8em;
+  padding: 0.5em 1em;
+}
+
 table {
   margin: auto;
-  border-collapse: collapse;
+  border-spacing: 0;
+  border-color: rgb(200, 200, 200);
+  border-style: inset;
+  border-width: 10px;
+  padding: 0.8px;
+}
+
+.stopwatch {
+  font-size: 1.5rem;
+  margin: auto;
+  background-color: black;
+  width: 50px;
+  color: red;
+  border-radius: 2px;
+}
+.score {
+  font-size: 1.5rem;
+  margin: auto;
+  background-color: black;
+  width: 50px;
+  color: red;
+  border-radius: 2px;
 }
 
 .cell {
   background-color: lightgray;
-  border: 1px solid gray;
-
-  padding: 1em;
+  border: 3px outset rgb(200, 200, 200);
   cursor: pointer;
   text-align: center;
   width: 40px;
@@ -33,7 +57,14 @@ table {
 .cell-pressed {
   background-color: rgb(165, 165, 165);
 }
-
+button.smile {
+  background-color: rgb(200, 200, 200);
+  border: outset 3px;
+  width: 35px;
+  height: 35px;
+  padding: 0;
+  font-size: large;
+}
 .lives img {
   width: 40px;
   margin-top: 30px;
@@ -42,7 +73,6 @@ table {
 }
 
 footer {
-  position: absolute;
   font-size: 30px;
   bottom: 5%;
   left: 40%;
@@ -50,4 +80,14 @@ footer {
 
 .controls {
   text-align: center;
+}
+
+.test {
+  display: flex;
+  flex-direction: row;
+  margin: 0px 377px;
+  background-color: rgb(200, 200, 200);
+  border: inset 10px;
+  border-color: rgb(200, 200, 200);
+  margin-bottom: -10px;
 }

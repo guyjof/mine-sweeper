@@ -5,22 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="https://w7.pngwing.com/pngs/337/559/png-transparent-minesweeper-computer-icons-bing-maps-video-game-mines-miscellaneous-game-angle.png">
     <title>Mine Sweeper</title>
+
 </head>
-<body onload="initGame()" onmousedown="mouseAction(event)" >
+<body onload="initGame()" oncontextmenu=" return false">
 
     <main>
         <div class="controls">
 
-            <button onclick="easy(this)">Easy</button>
-            <button onclick="medium(this)">Medium</button>
-            <button onclick="hard(this)">Hard</button>
-            
-            <div class="stopwatch">0</div>
-            <button class="smile" onclick="initGame()"></button>
+            <button class="level-button" onclick="gameLevel(this)">Easy</button>
+            <button class="level-button" onclick="gameLevel(this)">Medium</button>
+            <button class="level-button" onclick="gameLevel(this)">Hard</button>
+
         </div>
 
-        <div class="game-board" oncontextmenu=" return false">
+        <div class="test">
+            <div class="score">0</div>
+
+            <div>
+                <button class="smile" onclick="initGame()"></button>
+            </div>
+            
+            <div class="stopwatch">0</div>
+        </div>
+
+        <div class="game-board" onmousedown="mouseAction(event)" >
         </div>
         
         <div class="lives"></div>
