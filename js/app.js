@@ -174,22 +174,23 @@ function gameLevel(btn) {
     if (btn.innerText === 'Easy') {
         gLevel.SIZE = 4;
         gLevel.MINES = 2;
-        renderBoard(gBoard, '.game-board');
         initGame()
+        var elTest = document.querySelector('.test')
+        elTest.style.width = '191px'
     }
     if (btn.innerText === 'Medium') {
         gLevel.SIZE = 8;
         gLevel.MINES = 12;
-        gBoard = buildBoard();
-        renderBoard(gBoard, '.game-board');
         initGame()
+        var elTest = document.querySelector('.test')
+        elTest.style.width = '383px'
     }
     if (btn.innerText === 'Hard') {
         gLevel.SIZE = 12;
         gLevel.MINES = 30;
-        gBoard = buildBoard();
-        renderBoard(gBoard, '.game-board');
         initGame()
+        var elTest = document.querySelector('.test')
+        elTest.style.width = '576px'
     }
 }
 
